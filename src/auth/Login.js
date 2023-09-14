@@ -10,6 +10,7 @@ function Login() {
   const [showSignUp, setShowSignUp] = useState(false);
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
+  let [contador, setcontador] = useState(0);  
   
   const navigate = useNavigate();
 
@@ -19,6 +20,7 @@ function Login() {
 
   const handlePasswordChange = (e) => {
     setPassword(e.target.value);
+    setcontador(contador+1);
   };
 
   const handleSubmit = (e) => {
@@ -26,6 +28,8 @@ function Login() {
 
     if (username && password) {
       alert('Inicio de sesión exitoso');
+    } else if(contador<10){
+      alert('Por favor, ingrese una contraseña valida mayor a 10 caracteres')
     } else {
       alert('Por favor, completa todos los campos');
     }

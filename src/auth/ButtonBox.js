@@ -3,7 +3,7 @@ import './Global.css';
 import logoImage from './logo.png';
 import {Routes, Route, useNavigate} from 'react-router-dom';
 
-function Buttons( {showLoginInstead, showLoginInsteadChange} ) {
+function Buttons( {showLoginInstead, showLoginInsteadChange, showLoginInsteadForgot} ) {
   
   const navigate = useNavigate();
 
@@ -24,9 +24,17 @@ function Buttons( {showLoginInstead, showLoginInsteadChange} ) {
 
   return (
     <div class="button-box">
-        <button onClick={redirectoForgetPass} className="forgot-password-link">
-        ¿Forgot password?
-        </button>
+
+        {showLoginInsteadForgot && (
+            <button onClick={redirectoLogin} className="signup-link">
+            Login
+            </button>
+        )}
+        {!showLoginInsteadForgot && (
+                    <button onClick={redirectoForgetPass} className="forgot-password-link">
+                    ¿Forgot password?
+                    </button>
+        )}
 
         {showLoginInsteadChange && (
             <button onClick={redirectoLogin} className="signup-link">

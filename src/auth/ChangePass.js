@@ -8,6 +8,7 @@ function Change() {
   const [oldPassword, setOldPassword] = useState('');
   const [newPassword, setNewPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
+  let [contador, setcontador] = useState(0);  
 
   const handleOldPasswordChange = (e) => {
     setOldPassword(e.target.value);
@@ -15,6 +16,7 @@ function Change() {
 
   const handleNewPasswordChange = (e) => {
     setNewPassword(e.target.value);
+    setcontador(contador+1);
   };
 
   const handleConfirmPasswordChange = (e) => {
@@ -24,9 +26,9 @@ function Change() {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-  
-    if (newPassword === confirmPassword) {
-     
+    if(contador<10){
+      alert('La contraseña es menor al tamaño minimo');
+    }else if (newPassword === confirmPassword) {
       alert('Contraseña cambiada con éxito');
     } else {
       alert('Las contraseñas no coinciden');

@@ -9,9 +9,20 @@ function SignUp() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [showPassword, setShowPassword] = useState(false);
+  let [contador, setcontador] = useState(0);  
+
+  const verificarCorreo = (email) => {
+    const emailRegex = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i;
+    return emailRegex.test(email);
+  };
 
   const handleNameChange = (e) => {
-    setName(e.target.value);
+    const inputValue = e.target.value;
+    const regex = /^[A-Za-z\s]+$/;
+  
+    if (regex.test(inputValue) || inputValue === "") {
+      setName(inputValue);
+    }
   };
 
   const handleEmailChange = (e) => {
@@ -20,6 +31,7 @@ function SignUp() {
 
   const handlePasswordChange = (e) => {
     setPassword(e.target.value);
+    setcontador(contador+1);
   };
 
   const handleShowPassword = () => {
@@ -29,9 +41,9 @@ function SignUp() {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-
-    if (name && email && password) {
- 
+    if(contador < 10){
+      alert('Ingrese una contraseña valida');
+    }else if (name && email && password && (verificarCorreo(email))) {
       alert('Registro exitoso');
     } else {
       alert('Por favor, completa todos los campos');
