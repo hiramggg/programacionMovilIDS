@@ -1,0 +1,108 @@
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body{
+  height: 100%;
+  background-color: yellow;
+}
+.login-container {
+  background-color: black; /* Fondo negro */
+  color: #fff; /* Texto blanco */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  height: 100%;
+  min-height: 100vh;
+  text-align: center;
+}
+
+.login-logo{
+  width: 60%;
+}
+
+.login-main-container{
+  background-color: black;
+  padding: 30px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  border: 5px solid white;
+  border-radius: 30px;
+}
+  
+  /* Estilos para el título "LOGIN" */
+  h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  input[type="text"],
+  input[type="password"],
+  input[type="email"] {
+    width: 100%;
+    padding: 10px;
+    margin: 0;
+    border: none;
+    border-radius: 4px;
+    background-color: #333; /* Fondo gris oscuro */
+    color: #fff; /* Texto blanco */
+  }
+  
+  button {
+    width: 50%;
+    padding: 10px;
+    margin: 5px 0;
+    border: none;
+    border-radius: 4px;
+    background-color: #333; /* Fondo gris oscuro */
+    color: #fff; /* Texto blanco */
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  button:hover {
+    background-color: #555; /* Fondo gris oscuro más claro al pasar el ratón */
+  }
+  .button-box{
+    display: flex;
+    gap: 5px;
+    width: 100%;
+  }
+  .button-box button{
+    background-color: lightslategray;
+  }
+  .submit-button{
+    width: 100%;
+    background-color: #555;
+  }
+
+  .form{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+  }
+
+  .form-group{
+    width: 100%;
+  }
+  
+  .password-space{
+    display: flex;
+    gap: 10px;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+  }
+  .password-space button{
+    height: 100%;
+    margin: 0;
+  }
